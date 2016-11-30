@@ -24,7 +24,17 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    bash <(curl -fsSL https://raw.githubusercontent.com/PowerShell/PowerShell/v6.0.0-alpha.12/tools/download.sh)
+    # perform update
+    sudo apt-get update
+
+    # install nodejs
+    curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+    # install azure-cli
+    sudo npm install -g azure-cli
+
+    # install powershell
+    sudo bash <(curl -fsSL https://raw.githubusercontent.com/PowerShell/PowerShell/v6.0.0-alpha.12/tools/download.sh)
   SHELL
 end
