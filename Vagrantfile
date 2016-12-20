@@ -34,7 +34,8 @@ Vagrant.configure("2") do |config|
     # install azure-cli
     sudo npm install -g azure-cli
 
+    # NOTE: powershell of linux is not ready. Azure-CLI should be good enough to manage Azure resource
     # install powershell
-    sudo bash <(curl -fsSL https://raw.githubusercontent.com/PowerShell/PowerShell/v6.0.0-alpha.12/tools/download.sh)
+    #sudo bash <(curl -fsSL https://raw.githubusercontent.com/PowerShell/PowerShell/v6.0.0-alpha.12/tools/download.sh)
   SHELL
 end
